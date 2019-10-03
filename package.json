@@ -10,6 +10,6 @@
     "jsdoc": "^3.6.3"
   },
   "script": {
-    "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json"
+    "docs": "node_modules/.bin/jsdoc -c jsdoc.json"
   }
 }
