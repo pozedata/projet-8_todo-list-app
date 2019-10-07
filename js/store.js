@@ -107,9 +107,6 @@
 			// Assign an ID
 			// updateData.id = parseInt(newId);  
 
-			// updateData.id =""+updateData.title+""+Date.now()+"";
-			// console.log(updateData.id);
-
 			updateData.id = parseInt(""+newId+""+Date.now()+"");
     
 			todos.push(updateData);
