@@ -16,6 +16,7 @@
 	/**
 	 * defines the constructor view
 	 * @constructor
+	 * @name View
 	 */
 	function View(template) {
 		this.template = template;
@@ -34,6 +35,8 @@
 
 	/**
 	 * Delete the todo according to the id.
+	 * @method
+	 * @name View._removeItem
 	 * @param {number} id The ID of the item to delete.
 	*/
 	View.prototype._removeItem = function (id) {
@@ -46,6 +49,8 @@
 
 	/**
 	 * Hidden or showing the button
+	 * @method
+	 * @name View._clearCompletedButton
 	 * @param  {number} completedCount The number of items checked.
 	 * @param  {bolean} visible True if visible, false if not.
 	 */
@@ -56,6 +61,8 @@
 
 	/**
 	 * Indicates the current page.
+	 * @method
+	 * @name View._setFilter
 	 * @param {string} currentPage The current page can have the values '' || active || completed.
 	 */
 	View.prototype._setFilter = function (currentPage) {
@@ -65,6 +72,8 @@
 
 	/**
 	 * Test if the element is finished.
+	 * @method
+	 * @name View._elementComplete
 	 * @param  {number} id The ID of the item to test.
 	 * @param  {bolean} completed The status of the element.
 	 */
@@ -83,6 +92,8 @@
 
 	/**
 	 * Allows modification of an element.
+	 * @method
+	 * @name View._editItem
 	 * @param  {number} id The ID of the item to edit.
 	 * @param  {string} title The content of the modification of the element.
 	 */
@@ -105,6 +116,8 @@
 
 	/**
 	 * Replaces the old element with the edited element.
+	 * @method
+	 * @name View._editItemDone
 	 */
 	View.prototype._editItemDone = function (id, title) {
 		var listItem = qs('[data-id="' + id + '"]');
@@ -126,6 +139,8 @@
 
 	/**
 	 * Returns the elements in the DOM.
+	 * @method
+	 * @name View.render
 	 * @param  {string} viewCmd   The function called.
 	 * @param  {object} parameter function parameter.
 	 */
@@ -177,6 +192,8 @@
 
 	/**
 	 * EventListener on the validation of the editing of an element.
+	 * @method
+	 * @name View._bindItemEditDone
 	 * @param  {function} handler A conditionally executed callback.
 	 */
 	View.prototype._bindItemEditDone = function (handler) {
@@ -201,6 +218,8 @@
 
 	/**
 	 * EventListener on the cancellation of the editing of an element.
+	 * @method
+	 * @name View._bindItemEditCancel
 	 * @param  {function} handler A conditionally executed callback.
 	 */
 	View.prototype._bindItemEditCancel = function (handler) {
@@ -218,6 +237,8 @@
 
 	/**
 	 * Makes the link between the controller methods and view elements.
+	 * @method
+	 * @name View.bind
 	 * @param  {function} event   event called
 	 * @param  {function} handler A conditionally executed callback.
 	 */

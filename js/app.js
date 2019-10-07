@@ -4,6 +4,8 @@
 
 	/**
 	 * Sets up a brand new Todo list.
+	 * @constructor 
+	 * @name Todo
 	 *
 	 * @param {string} name The name of your new to do list.
 	 */

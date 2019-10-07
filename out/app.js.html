@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: app.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,45 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: app.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/*global app, $on */
+(function () {
+	'use strict';
 
+	/**
+	 * Sets up a brand new Todo list.
+	 * @constructor 
+	 * @name Todo
+	 *
+	 * @param {string} name The name of your new to do list.
+	 */
+	function Todo(name) {
+		this.storage = new app.Store(name);
+		this.model = new app.Model(this.storage);
+		this.template = new app.Template();
+		this.view = new app.View(this.template);
+		this.controller = new app.Controller(this.model, this.view);
+	}
 
-    <h3> </h3>
+	var todo = new Todo('todos-vanillajs');
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+	function setView() {
+		todo.controller.setView(document.location.hash);
+	}
+	$on(window, 'load', setView);
+	$on(window, 'hashchange', setView);
+})();
+</code></pre>
+        </article>
+    </section>
 
 
 
