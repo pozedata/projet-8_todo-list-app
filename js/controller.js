@@ -102,7 +102,7 @@
 	 * @name Controller.addItem
 	 */
 
-	// Controller.prototype.adddItem = function (title) {    ----- avant 
+	// Controller.prototype.adddItem = function (title) {  
 	Controller.prototype.addItem = function (title) {
 		var self = this;
 
@@ -185,10 +185,11 @@
 		// 		console.log("Element with ID: " + id + " has been removed.");
 		// 	}
 		// });
+		
+		// console.log("Element with ID: " + id + " has been removed.");
 
 		self.model.remove(id, function () {
 			self.view.render('removeItem', id);
-			// console.log("Element with ID: " + id + " has been removed.");
 		});
 
 		self._filter();

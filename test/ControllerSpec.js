@@ -171,7 +171,7 @@ describe('controller', function () {
 	describe('toggle all', function () {
 		it('should toggle all todos to completed', function () {
 			// TODO: write test
-			var todos = [{id: 1, title: 'todo1', completed: false}, {id: 2, title: 'todo2', completed: false}]
+			var todos = [{id: 1, title: 'todo1', completed: true}, {id: 2, title: 'todo2', completed: false}]
 
 			setUpModel(todos);
 
@@ -191,7 +191,7 @@ describe('controller', function () {
 
 			subject.setView('');
 
-			view.trigger('toggleAll', {completed: true});
+			view.trigger('toggleAll', {completed: false});
 
 			expect(view.render).toHaveBeenCalledWith('elementComplete', { id: 1, completed: true });
 		});
