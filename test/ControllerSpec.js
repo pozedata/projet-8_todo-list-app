@@ -191,7 +191,7 @@ describe('controller', function () {
 
 			subject.setView('');
 
-			view.trigger('toggleAll', {completed: false});
+			view.trigger('toggleAll', {completed: true});
 
 			expect(view.render).toHaveBeenCalledWith('elementComplete', { id: 1, completed: true });
 		});
